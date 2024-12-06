@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Private</title>
+</head>
+<body>
+<h2 th:text="${text}"></h2>
+<div>
+    <p>User: <span sec:authentication="name">NOT FOUND</span></p>
+    <p>Spring Roles: <span sec:authentication="principal.authorities">NOT FOUND</span></p>
+
+</div>
+<form action="#" th:action="@{/public}" method="GET">
+    <button type="submit">Public</button>
+</form>
+</body>
+
+</html>
